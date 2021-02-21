@@ -6,12 +6,25 @@ import {
 
 
 const GifGridItem = ({image}) => {
-    return (
-      <Card body className="animate__animated animate__fadeInUp card-custom">
-        <CardImg src={image.url} alt="image.title" />
-        <Button outline className="button-custom" color="primary" size="sm">Ir al sitio...</Button>
-      </Card>
-    );
+
+  const goToWebsiteGif = () => {
+    return window.open(`${image.url}`, '_blank');
+    };
+
+  return (
+    <Card body className="animate__animated animate__fadeInUp card-custom">
+      <CardImg src={image.url} alt="image.title" />
+      <Button
+        outline
+        className="button-custom"
+        color="primary"
+        size="sm"
+        onClick={goToWebsiteGif}
+      >
+        Ir al sitio...
+      </Button>
+    </Card>
+  );
 }
 
 export default GifGridItem;

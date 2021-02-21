@@ -2,10 +2,39 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+body {
+  background-color: lightcoral;
+}
+
+h2 {
+  margin: 2rem 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  color: white;
+}
+
+
 input {
-  width: 100%;
+  width: 80%;
   font-size: 1.2rem;
   color: gray;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+.category {
+  color: white;
+  text-align: right;
+  margin: 0 1rem 1rem 0;
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.input-group {
+  width: 100%;
 }
 
 .card {
