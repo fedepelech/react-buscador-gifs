@@ -1,40 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useFetchGifs } from '../hooks/useFetchGifs';
 import GifGridItem from './GifGridItem';
+import {Container, Row, Col} from 'reactstrap';
 
 const GifGrid = ({category}) => {
-
-    const [images, setImages] = useState([]);
-
-    useEffect( () => {
-        getGifs();
-    }, []);
-
-    const getGifs = async () => {
-        const url = 'https://api.giphy.com/v1/gifs/search?q=The+simpsons&limit=10&api_key=DFQK26LJ21H2swDjMUhyzCtufUtJskLs';
-        const resp = await fetch(url);
-        const {data} = await resp.json();
-
-        const gifs = data.map(img => {
-            return {
-                id: img.id,
-                title: img.title,
-                url: img.images.downsized_medium.url
-            }
-        })
-
-        console.log(gifs);
-        setImages(gifs);
-    }
-
+    const {data, loading} = useFetchGifs(category);
     return (
-      <>
-        <h3>{category}</h3>
-        <div className="card-grid">
-          {images.map((image) => {
-            return <GifGridItem key={image.id} image={image} />;
+      <Container>
+        <h3 className='animate__animated animate__fadeInUp'>{category}</h3>
+        { loading && <p className='animate__animated animate__pulse'>Cargando...</p>}
+
+        <Row>
+          {data.map((image) => {
+            return (
+              <Col xs="12" sm="6" md="4">
+                <GifGridItem key={image.id} image={image} />
+              </Col>
+            );
           })}
-        </div>
-      </>
+        </Row>
+      </Container>
     );
 }
 

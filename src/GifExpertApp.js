@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import AddCategory from './components/AddCategory';
 import GifGrid from './components/GifGrid';
+import { Container } from 'reactstrap';
 
 const GifExpertApp = () => {
   // const categories = ['One Punch', 'Simpson', 'Casados con hijos'];
-  const [categories, setCategory] = useState(['One Punch']);
+  const [categories, setCategory] = useState(['Los simpsons']);
 
   return (
     <>

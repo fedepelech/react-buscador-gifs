@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
+import { InputGroup, InputGroupText, Input } from 'reactstrap';
 
 const AddCategory = ({setCategory}) => {
   const [inputValue, setInputValue] = useState('');
@@ -15,12 +16,14 @@ const AddCategory = ({setCategory}) => {
       return false;
     }
 
-    setCategory(cats => [...cats, inputValue]);
+    setCategory(cats => [inputValue, ...cats]);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={inputValue} onChange={handleInputChange} />
+      <InputGroup>
+        <Input placeholder="Escriba aquí.." type="text" value={inputValue} onChange={handleInputChange}/>
+      </InputGroup>
     </form>
   );
 

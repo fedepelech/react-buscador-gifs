@@ -2,10 +2,6 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
-body {
-  padding: 60px;
-}
-
 input {
   width: 100%;
   font-size: 1.2rem;
@@ -34,4 +30,14 @@ input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.card-custom {
+  background-color: lightcyan;
+  border: 1px solid blue;
+}
+
+.button-custom{
+  margin-top: 1rem;
+  width: 40%;
 }
