@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 
 
-const GifGridItem = ({image}) => {
+const GifGridCard = ({image}) => {
 
   const goToWebsiteGif = () => {
     return window.open(`${image.url}`, '_blank');
@@ -27,4 +27,4 @@ const GifGridItem = ({image}) => {
   );
 }
 
-export default GifGridItem;
+export default GifGridCard;

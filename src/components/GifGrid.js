@@ -1,10 +1,10 @@
 import React from 'react';
-import { useFetchGifs } from '../hooks/useFetchGifs';
-import GifGridItem from './GifGridItem';
+import { useGifEndpoint } from '../hooks/useGifEndpoint';
+import GifGridCard from './GifGridCard';
 import {Container, Row, Col} from 'reactstrap';
 
 const GifGrid = ({category}) => {
-    const {data, loading} = useFetchGifs(category);
+    const {data, loading} = useGifEndpoint(category);
     return (
       <Container>
         <h3 className='animate__animated animate__fadeInUp category'>{category}</h3>
@@ -14,7 +14,7 @@ const GifGrid = ({category}) => {
           {data.map((image) => {
             return (
               <Col key={image.id} xs="12" sm="6" md="4">
-                <GifGridItem image={image} />
+                <GifGridCard image={image} />
               </Col>
             );
           })}

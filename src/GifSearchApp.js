@@ -4,7 +4,7 @@ import GifGrid from './components/GifGrid';
 import { getGifWelcome } from './helpers/getGifWelcome';
 import { Container, Alert, Card, CardImg, Row, Col } from 'reactstrap';
 
-const GifExpertApp = () => {
+const GifSearchApp = () => {
   const [categories, setCategory] = useState([]);
   const [image, setImage] = useState('');
   const [loading, setLoading] = useState(true);
@@ -53,4 +53,4 @@ const GifExpertApp = () => {
   );
 };
 
-export default GifExpertApp;
+export default GifSearchApp;
